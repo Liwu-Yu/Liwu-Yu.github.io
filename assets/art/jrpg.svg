@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="800" height="500">
+  <title>A line-art world map with a dotted route between islands, ending at an unexplored marker</title>
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+    .route{stroke-dasharray:1 6;animation:walk 3s linear infinite}
+    @keyframes walk{to{stroke-dashoffset:-14}}
+    .here{animation:ping 2.4s ease-out infinite;transform-origin:226px 84px}
+    @keyframes ping{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.2);opacity:0}}
+    @media (prefers-reduced-motion:reduce){.route,.here{animation:none}}
+  </style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#181825"/>
+      <stop offset="1" stop-color="#11111b"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#cdd6f4" stroke-opacity=".05"/>
+    </pattern>
+    <path id="isA" d="M50 150 Q48 120 80 112 Q110 104 130 122 Q150 140 140 170 Q128 198 96 198 Q60 196 50 150 Z"/>
+    <path id="isB" d="M180 80 Q186 52 222 50 Q262 48 280 70 Q296 92 270 112 Q240 128 208 118 Q178 108 180 80 Z"/>
+    <path id="isC" d="M286 176 Q290 150 320 148 Q352 148 362 172 Q368 196 340 206 Q306 214 292 198 Q284 188 286 176 Z"/>
+  </defs>
+
+  <rect width="400" height="250" fill="url(#bg)"/>
+  <rect width="400" height="250" fill="url(#grid)"/>
+  <rect x="12" y="12" width="376" height="226" rx="6" fill="none" stroke="#cdd6f4" stroke-opacity=".08"/>
+
+  <g fill="#1e1e2e" stroke="#cdd6f4" stroke-opacity=".38">
+    <use href="#isA"/><use href="#isB"/><use href="#isC"/>
+    <circle cx="160" cy="196" r="4"/><circle cx="172" cy="204" r="2.5"/><circle cx="300" cy="104" r="3.5"/>
+    <circle cx="118" cy="60" r="5"/><circle cx="130" cy="70" r="2.5"/>
+  </g>
+  <g fill="none" stroke="#cdd6f4" stroke-opacity=".13">
+    <use href="#isA" transform="translate(95 155) scale(.72) translate(-95 -155)"/>
+    <use href="#isA" transform="translate(95 155) scale(.44) translate(-95 -155)"/>
+    <use href="#isB" transform="translate(232 84) scale(.7) translate(-232 -84)"/>
+    <use href="#isB" transform="translate(232 84) scale(.4) translate(-232 -84)"/>
+    <use href="#isC" transform="translate(324 178) scale(.66) translate(-324 -178)"/>
+  </g>
+  <g fill="none" stroke="#cdd6f4" stroke-opacity=".45" stroke-linejoin="round">
+    <path d="M100 140 l6 -8 l6 8 M110 140 l5 -6 l5 6"/>
+    <path d="M246 70 l6 -8 l6 8 M256 70 l5 -6 l5 6 M236 72 l4 -5 l4 5"/>
+    <path d="M336 168 l5 -7 l5 7"/>
+  </g>
+
+  <path class="route" d="M88 158 C130 150 160 110 226 84 S300 140 322 178" fill="none" stroke="#89b4fa" stroke-width="2" stroke-linecap="round"/>
+
+  <g fill="#cdd6f4">
+    <rect x="84" y="154" width="8" height="8" transform="rotate(45 88 158)"/>
+    <rect x="318" y="174" width="8" height="8" transform="rotate(45 322 178)" fill="none" stroke="#cdd6f4" stroke-opacity=".7"/>
+  </g>
+  <circle class="here" cx="226" cy="84" r="8" fill="none" stroke="#89b4fa" stroke-width="1.5"/>
+  <circle cx="226" cy="84" r="4" fill="#89b4fa"/>
+
+  <g font-size="8.5" fill="#cdd6f4" fill-opacity=".55" letter-spacing=".6">
+    <text x="88" y="178" text-anchor="middle">START</text>
+    <text x="226" y="70" text-anchor="middle" fill="#89b4fa" fill-opacity="1">YOU ARE HERE</text>
+    <text x="322" y="196" text-anchor="middle">???</text>
+  </g>
+
+  <g transform="translate(356 50)" stroke="#cdd6f4" stroke-opacity=".5" fill="none">
+    <circle r="14"/>
+    <path d="M0 -10 L3 0 L0 10 L-3 0 Z" fill="#cdd6f4" fill-opacity=".25"/>
+    <path d="M0 -10 L3 0 L-3 0 Z" fill="#cdd6f4" fill-opacity=".7" stroke="none"/>
+  </g>
+  <text x="356" y="28" text-anchor="middle" font-size="8" fill="#cdd6f4" fill-opacity=".55">N</text>
+</svg>

@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 500" width="1050" height="500" fill="none">
+  <title>MARS: a planning chat proposes a protocol, a compiler checks it against the bench, and the robot runs a scheduled task graph</title>
+  <defs>
+    <style>
+      .s{font-family:Inter,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+      .m{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    </style>
+    <filter id="sh" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#4c4f69" flood-opacity=".07"/>
+    </filter>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M1.5 1.5 L8 5 L1.5 8.5" fill="none" stroke="#1e66f5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect width="1050" height="500" fill="#eff1f5"/>
+
+  <g class="m" font-size="13" letter-spacing="1.5" fill="#8c8fa1">
+    <text x="40" y="56"><tspan fill="#1e66f5">01</tspan> PLAN</text>
+    <text x="380" y="56"><tspan fill="#1e66f5">02</tspan> VALIDATE</text>
+    <text x="720" y="56"><tspan fill="#1e66f5">03</tspan> EXECUTE</text>
+  </g>
+
+  <g filter="url(#sh)" fill="#fff" stroke="#e6e9ef">
+    <rect x="40" y="76" width="290" height="334" rx="14"/>
+    <rect x="380" y="76" width="290" height="334" rx="14"/>
+    <rect x="720" y="76" width="290" height="334" rx="14"/>
+  </g>
+  <g stroke="#1e66f5" stroke-width="1.6" stroke-linecap="round" marker-end="url(#ar)">
+    <path d="M338 243 H372"/>
+    <path d="M678 243 H712"/>
+  </g>
+
+  <!-- 01 plan -->
+  <text class="m" x="60" y="106" font-size="12" fill="#8c8fa1">planning chat</text>
+  <rect x="104" y="120" width="206" height="56" rx="14" fill="#1e66f5"/>
+  <text class="s" font-size="14" fill="#fff"><tspan x="120" y="143">Seed cells in 4 wells,</tspan><tspan x="120" y="163">image after 24 h.</tspan></text>
+  <rect x="60" y="190" width="250" height="196" rx="14" fill="#eff1f5" stroke="#e6e9ef"/>
+  <text class="m" x="78" y="216" font-size="11.5" fill="#8c8fa1">proposed protocol</text>
+  <g class="m" font-size="13" fill="#4c4f69">
+    <text x="78" y="248"><tspan fill="#1e66f5">1</tspan> aspirate 300 µL</text>
+    <text x="78" y="278"><tspan fill="#1e66f5">2</tspan> dispense 75 µL → A1–A4</text>
+    <text x="78" y="308"><tspan fill="#1e66f5">3</tspan> incubate 24 h</text>
+    <text x="78" y="338"><tspan fill="#1e66f5">4</tspan> image plate</text>
+  </g>
+  <text class="m" x="78" y="368" font-size="11.5" fill="#8c8fa1">+ deck layout, labware</text>
+
+  <!-- 02 validate -->
+  <text class="s" x="400" y="110" font-size="16" font-weight="600" fill="#4c4f69">Protocol compiler</text>
+  <text class="m" x="400" y="130" font-size="12" fill="#8c8fa1">deterministic checks</text>
+  <path d="M400 146 H650" stroke="#eff1f5"/>
+  <g class="s" font-size="14.5" fill="#4c4f69">
+    <circle cx="411" cy="173" r="9" fill="#e8f4e6"/><path d="M406.6 173.2 l3 3 l5.2 -6" stroke="#40a02b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="430" y="178">Labware is on the deck</text>
+    <circle cx="411" cy="209" r="9" fill="#e8f4e6"/><path d="M406.6 209.2 l3 3 l5.2 -6" stroke="#40a02b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="430" y="214">Arm can reach every slot</text>
+    <circle cx="411" cy="245" r="9" fill="#fff0e7"/><path d="M407.5 241.5 l7 7 M414.5 241.5 l-7 7" stroke="#fe640b" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="430" y="250">300 µL &gt; 200 µL tip</text>
+    <text class="m" x="430" y="271" font-size="12" fill="#1e66f5">→ split into 2 transfers</text>
+    <circle cx="411" cy="301" r="9" fill="#e8f4e6"/><path d="M406.6 301.2 l3 3 l5.2 -6" stroke="#40a02b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="430" y="306">No scheduling conflicts</text>
+  </g>
+  <rect x="400" y="342" width="250" height="44" rx="10" fill="#e9f0fe"/>
+  <text class="m" x="418" y="369" font-size="13" fill="#1e66f5">✓ compiled → task graph</text>
+
+  <!-- 03 execute -->
+  <text class="m" x="740" y="106" font-size="12" fill="#8c8fa1">digital twin · bench</text>
+  <rect x="740" y="118" width="250" height="140" rx="10" fill="#eff1f5" stroke="#e6e9ef"/>
+  <g fill="#fff" stroke="#dce0e8">
+    <rect x="750" y="128" width="72" height="56" rx="6"/>
+    <rect x="829" y="128" width="72" height="56" rx="6"/>
+    <rect x="908" y="128" width="72" height="56" rx="6"/>
+    <rect x="750" y="192" width="72" height="56" rx="6"/>
+    <rect x="908" y="192" width="72" height="56" rx="6"/>
+  </g>
+  <rect x="829.5" y="192.5" width="71" height="55" rx="6" stroke="#ccd0da" stroke-dasharray="3 3"/>
+  <g fill="#dce0e8">
+    <circle cx="762" cy="140" r="3"/><circle cx="774" cy="140" r="3"/><circle cx="786" cy="140" r="3"/><circle cx="798" cy="140" r="3"/><circle cx="810" cy="140" r="3"/>
+    <circle cx="762" cy="156" r="3"/><circle cx="774" cy="156" r="3"/><circle cx="786" cy="156" r="3"/><circle cx="798" cy="156" r="3"/><circle cx="810" cy="156" r="3"/>
+    <circle cx="762" cy="172" r="3"/><circle cx="774" cy="172" r="3"/><circle cx="786" cy="172" r="3"/><circle cx="798" cy="172" r="3"/><circle cx="810" cy="172" r="3"/>
+  </g>
+  <rect x="839" y="140" width="52" height="32" rx="5" fill="#dae6fd"/>
+  <rect x="839" y="154" width="52" height="18" rx="5" fill="#afc8fb"/>
+  <g fill="#e6e9ef">
+    <circle cx="918" cy="140" r="3.2"/><circle cx="928.4" cy="140" r="3.2"/><circle cx="938.8" cy="140" r="3.2"/><circle cx="949.2" cy="140" r="3.2"/><circle cx="959.6" cy="140" r="3.2"/><circle cx="970" cy="140" r="3.2"/>
+    <circle cx="918" cy="150" r="3.2"/><circle cx="928.4" cy="150" r="3.2"/><circle cx="938.8" cy="150" r="3.2"/><circle cx="949.2" cy="150" r="3.2"/><circle cx="959.6" cy="150" r="3.2"/><circle cx="970" cy="150" r="3.2"/>
+    <circle cx="918" cy="160" r="3.2"/><circle cx="928.4" cy="160" r="3.2"/><circle cx="938.8" cy="160" r="3.2"/><circle cx="949.2" cy="160" r="3.2"/><circle cx="959.6" cy="160" r="3.2"/><circle cx="970" cy="160" r="3.2"/>
+    <circle cx="918" cy="170" r="3.2"/><circle cx="928.4" cy="170" r="3.2"/><circle cx="938.8" cy="170" r="3.2"/><circle cx="949.2" cy="170" r="3.2"/><circle cx="959.6" cy="170" r="3.2"/><circle cx="970" cy="170" r="3.2"/>
+  </g>
+  <g fill="#1e66f5">
+    <circle cx="918" cy="140" r="3.2"/><circle cx="928.4" cy="140" r="3.2"/><circle cx="938.8" cy="140" r="3.2"/><circle cx="949.2" cy="140" r="3.2"/>
+  </g>
+  <text class="m" x="786" y="224" font-size="12" fill="#5c5f77" text-anchor="middle">37 °C</text>
+  <circle cx="944" cy="220" r="13" stroke="#acb0be" stroke-width="1.5"/>
+  <circle cx="944" cy="220" r="5" fill="#acb0be"/>
+  <path d="M865 134 Q904 106 936 132" stroke="#1e66f5" stroke-width="1.5" stroke-dasharray="2 4" stroke-linecap="round" marker-end="url(#ar)"/>
+
+  <text class="m" x="740" y="286" font-size="12" fill="#8c8fa1">schedule</text>
+  <g class="m" font-size="11.5" fill="#5c5f77">
+    <text x="740" y="309">asp</text>
+    <text x="740" y="333">disp</text>
+    <text x="740" y="357">incub</text>
+    <text x="740" y="381">image</text>
+  </g>
+  <g>
+    <rect x="792" y="298" width="34" height="14" rx="4" fill="#1e66f5"/>
+    <rect x="830" y="322" width="46" height="14" rx="4" fill="#1e66f5"/>
+    <rect x="880" y="346" width="78" height="14" rx="4" fill="#bfd4fc"/>
+    <rect x="962" y="370" width="26" height="14" rx="4" fill="#1e66f5"/>
+  </g>
+  <path d="M792 394 H988" stroke="#e6e9ef"/>
+  <g class="m" font-size="10" fill="#8c8fa1">
+    <text x="792" y="404">0 h</text>
+    <text x="988" y="404" text-anchor="end">24 h</text>
+  </g>
+
+  <g class="s" font-size="15" fill="#5c5f77" text-anchor="middle">
+    <text x="185" y="446">Model proposes a protocol</text>
+    <text x="525" y="446">Code checks it against the bench</text>
+    <text x="865" y="446">Robot runs the scheduled task graph</text>
+  </g>
+</svg>

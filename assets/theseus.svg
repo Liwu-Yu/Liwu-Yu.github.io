@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 500" width="1050" height="500" fill="none">
+  <title>Theseus: AI breaks a main hypothesis into testable sub-hypotheses and experiments, each branch keeps its rationale and evidence, and uploaded results are interpreted into reviewable next steps</title>
+  <defs>
+    <style>
+      .s{font-family:Inter,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+      .m{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    </style>
+    <filter id="sh" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#4c4f69" flood-opacity=".07"/>
+    </filter>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M1.5 1.5 L8 5 L1.5 8.5" fill="none" stroke="#1e66f5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <g id="doc">
+      <path d="M0 2 a2 2 0 0 1 2 -2 H8 L12 4 V14 a2 2 0 0 1 -2 2 H2 a2 2 0 0 1 -2 -2 Z" fill="#fff" stroke="#8c8fa1" stroke-width="1.2" stroke-linejoin="round"/>
+      <path d="M3 8 H9 M3 11 H8" stroke="#acb0be" stroke-width="1.2" stroke-linecap="round"/>
+    </g>
+  </defs>
+
+  <rect width="1050" height="500" fill="#eff1f5"/>
+
+  <g class="m" font-size="13" letter-spacing="1.5" fill="#8c8fa1">
+    <text x="40" y="56"><tspan fill="#1e66f5">01</tspan> DECOMPOSE</text>
+    <text x="380" y="56"><tspan fill="#1e66f5">02</tspan> TRACE</text>
+    <text x="720" y="56"><tspan fill="#1e66f5">03</tspan> REPLAN</text>
+  </g>
+
+  <g filter="url(#sh)" fill="#fff" stroke="#e6e9ef">
+    <rect x="40" y="76" width="290" height="334" rx="14"/>
+    <rect x="380" y="76" width="290" height="334" rx="14"/>
+    <rect x="720" y="76" width="290" height="334" rx="14"/>
+  </g>
+  <g stroke="#1e66f5" stroke-width="1.6" stroke-linecap="round" marker-end="url(#ar)">
+    <path d="M338 243 H372"/>
+    <path d="M678 243 H712"/>
+  </g>
+
+  <!-- 01 decompose -->
+  <text class="m" x="60" y="106" font-size="12" fill="#8c8fa1">hypothesis map</text>
+  <rect x="60" y="120" width="250" height="54" rx="12" fill="#1e66f5"/>
+  <text class="s" font-size="13.5" fill="#fff" text-anchor="middle"><tspan x="185" y="143">KRAS G12D inhibition reduces</tspan><tspan x="185" y="162">pancreatic organoid growth</tspan></text>
+
+  <g stroke="#ccd0da" stroke-width="1.4">
+    <path d="M98 194 H272 M98 194 V212 M272 194 V212"/>
+    <path d="M98 260 V286 M272 260 V286"/>
+  </g>
+  <path d="M185 174 V212 M185 260 V286" stroke="#1e66f5" stroke-width="1.6"/>
+
+  <g fill="#fff" stroke="#ccd0da">
+    <rect x="59" y="212" width="78" height="48" rx="8"/>
+    <rect x="233" y="212" width="78" height="48" rx="8"/>
+  </g>
+  <rect x="146" y="212" width="78" height="48" rx="8" fill="#e9f0fe" stroke="#1e66f5" stroke-width="1.5"/>
+  <g class="m" font-size="11" fill="#1e66f5" text-anchor="middle">
+    <text x="98" y="231">H1</text><text x="185" y="231">H2</text><text x="272" y="231">H3</text>
+  </g>
+  <g class="s" font-size="12.5" fill="#4c4f69" text-anchor="middle">
+    <text x="98" y="250">Growth</text><text x="185" y="250">MAPK</text><text x="272" y="250">Resistance</text>
+  </g>
+
+  <g fill="#fff0e7" stroke="#ffd1b6">
+    <rect x="59" y="286" width="78" height="34" rx="8"/>
+    <rect x="146" y="286" width="78" height="34" rx="8"/>
+    <rect x="233" y="286" width="78" height="34" rx="8"/>
+  </g>
+  <g class="s" font-size="12.5" fill="#b74808" text-anchor="middle">
+    <text x="98" y="307.5">Exp 1</text><text x="185" y="307.5">Exp 2</text><text x="272" y="307.5">Exp 3</text>
+  </g>
+  <text class="m" x="60" y="368" font-size="11.5" fill="#8c8fa1">+ edge scores, deeper levels</text>
+
+  <!-- 02 trace -->
+  <text class="s" x="400" y="110" font-size="16" font-weight="600" fill="#4c4f69">H2 · MAPK suppression</text>
+  <text class="m" x="400" y="130" font-size="12" fill="#8c8fa1">why this branch exists</text>
+  <path d="M400 146 H650" stroke="#eff1f5"/>
+
+  <g class="s" font-size="14.5" fill="#4c4f69">
+    <text x="400" y="174">Decomposition rationale</text>
+    <text x="400" y="232">Literature evidence</text>
+    <text x="400" y="290">AI confidence</text>
+  </g>
+  <g fill="#e6e9ef">
+    <rect x="400" y="186" width="236" height="6" rx="3"/>
+    <rect x="400" y="198" width="172" height="6" rx="3"/>
+    <rect x="442" y="248" width="164" height="6" rx="3"/>
+    <rect x="442" y="260" width="118" height="6" rx="3"/>
+  </g>
+  <use href="#doc" x="400" y="244"/>
+  <use href="#doc" x="418" y="244"/>
+  <text class="m" x="650" y="290" font-size="13" fill="#1e66f5" text-anchor="end">74%</text>
+  <rect x="400" y="300" width="250" height="6" rx="3" fill="#e6e9ef"/>
+  <rect x="400" y="300" width="185" height="6" rx="3" fill="#1e66f5"/>
+
+  <rect x="400" y="342" width="250" height="44" rx="10" fill="#e9f0fe"/>
+  <text class="m" x="418" y="369" font-size="13" fill="#1e66f5">→ Exp 2 · protocol, controls</text>
+
+  <!-- 03 replan -->
+  <text class="m" x="740" y="106" font-size="12" fill="#8c8fa1">results · interpreted</text>
+  <g class="s" font-size="14.5" fill="#4c4f69">
+    <circle cx="751" cy="136" r="9" fill="#e8f4e6"/><path d="M746.6 136.2 l3 3 l5.2 -6" stroke="#40a02b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="770" y="141">Exp 1 supports H1</text>
+    <circle cx="751" cy="172" r="9" fill="#fbe7eb"/><path d="M747.5 168.5 l7 7 M754.5 168.5 l-7 7" stroke="#d20f39" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="770" y="177">Exp 2: H2 not supported</text>
+    <circle cx="751" cy="208" r="9" fill="#eff1f5"/><path d="M751 203.5 V208 L754 210" stroke="#8c8fa1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="770" y="213" fill="#8c8fa1">Exp 3: no result yet</text>
+  </g>
+  <path d="M740 232 H990" stroke="#eff1f5"/>
+
+  <text class="m" x="740" y="258" font-size="12" fill="#8c8fa1">next step for H2</text>
+  <circle cx="749" cy="284" r="7" stroke="#1e66f5" stroke-width="1.5"/>
+  <circle cx="749" cy="284" r="3.5" fill="#1e66f5"/>
+  <circle cx="749" cy="312" r="7" stroke="#acb0be" stroke-width="1.5"/>
+  <g class="s" font-size="14.5">
+    <text x="766" y="289" fill="#4c4f69">Replace hypothesis</text>
+    <text x="766" y="317" fill="#8c8fa1">Further experiment</text>
+  </g>
+
+  <rect x="740" y="342" width="250" height="44" rx="10" fill="#e9f0fe"/>
+  <text class="m" x="758" y="369" font-size="13" fill="#1e66f5">→ 3 candidates to review</text>
+
+  <g class="s" font-size="15" fill="#5c5f77" text-anchor="middle">
+    <text x="185" y="446">AI proposes testable branches</text>
+    <text x="525" y="446">Each branch keeps its evidence</text>
+    <text x="865" y="446">Results become reviewable next steps</text>
+  </g>
+</svg>

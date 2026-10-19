@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="800" height="500">
+  <title>A tiny neural network predicting whether Liwu is researching or gaming</title>
+  <style>
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+    .hot{stroke-dasharray:4 10;animation:dash 1.4s linear infinite}
+    .hot:nth-child(2){animation-duration:1.9s}
+    .hot:nth-child(3){animation-duration:2.3s}
+    @keyframes dash{to{stroke-dashoffset:-28}}
+    .cur{animation:blink 1s steps(2,start) infinite}
+    @keyframes blink{to{visibility:hidden}}
+    @media (prefers-reduced-motion:reduce){.hot,.cur{animation:none}}
+  </style>
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#fff" stroke-opacity=".04"/></pattern>
+    <radialGradient id="nglow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#89b4fa" stop-opacity=".55"/><stop offset="1" stop-color="#89b4fa" stop-opacity="0"/></radialGradient>
+    <linearGradient id="bgl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#181825"/><stop offset="1" stop-color="#11111b"/></linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#bgl)"/>
+  <rect width="400" height="250" fill="url(#grid)"/>
+  <text x="14" y="30" font-size="9.5" fill="#9399b2"><tspan fill="#89b4fa">&gt;</tspan> model.predict(<tspan fill="#cdd6f4">"liwu is probably"</tspan>)</text>
+  <g stroke="#cdd6f4" stroke-opacity=".09" stroke-width=".8"><path d="M82 84 L124 78"/><path d="M82 84 L124 112"/><path d="M82 84 L124 146"/><path d="M82 84 L124 180"/><path d="M82 124 L124 78"/><path d="M82 124 L124 112"/><path d="M82 124 L124 146"/><path d="M82 124 L124 180"/><path d="M82 164 L124 78"/><path d="M82 164 L124 112"/><path d="M82 164 L124 146"/><path d="M82 164 L124 180"/><path d="M124 78 L186 96"/><path d="M124 78 L186 130"/><path d="M124 78 L186 164"/><path d="M124 112 L186 96"/><path d="M124 112 L186 130"/><path d="M124 112 L186 164"/><path d="M124 146 L186 96"/><path d="M124 146 L186 130"/><path d="M124 146 L186 164"/><path d="M124 180 L186 96"/><path d="M124 180 L186 130"/><path d="M124 180 L186 164"/><path d="M186 96 L236 112"/><path d="M186 96 L236 148"/><path d="M186 130 L236 112"/><path d="M186 130 L236 148"/><path d="M186 164 L236 112"/><path d="M186 164 L236 148"/><path d="M236 112 L262 109"/><path d="M236 112 L262 139"/><path d="M236 112 L262 169"/><path d="M236 148 L262 109"/><path d="M236 148 L262 139"/><path d="M236 148 L262 169"/></g>
+  <g fill="none" stroke-width="1.5" stroke-linecap="round">
+    <path class="hot" d="M82 84 L124 112 L186 130 L236 112 L262 109" stroke="#89b4fa" stroke-opacity=".8"/>
+    <path class="hot" d="M82 164 L124 146 L186 164 L236 148 L262 139" stroke="#fab387" stroke-opacity=".7"/>
+  </g>
+  <rect x="14" y="73" width="68" height="22" rx="11" fill="#1e1e2e" stroke="#cdd6f4" stroke-opacity=".22"/><text x="48" y="87.5" text-anchor="middle" font-size="10" fill="#cdd6f4">liwu</text><rect x="14" y="113" width="68" height="22" rx="11" fill="#1e1e2e" stroke="#cdd6f4" stroke-opacity=".22"/><text x="48" y="127.5" text-anchor="middle" font-size="10" fill="#cdd6f4">is</text><rect x="14" y="153" width="68" height="22" rx="11" fill="#1e1e2e" stroke="#cdd6f4" stroke-opacity=".22"/><text x="48" y="167.5" text-anchor="middle" font-size="10" fill="#cdd6f4">probably</text>
+  <circle cx="124" cy="78" r="5" fill="#181825" stroke="#cdd6f4" stroke-opacity="0.4" stroke-width="1.2"/><circle cx="124" cy="112" r="5" fill="#89b4fa" stroke="#cdd6f4" stroke-opacity="0" stroke-width="1.2"/><circle cx="124" cy="146" r="5" fill="#89b4fa" stroke="#cdd6f4" stroke-opacity="0" stroke-width="1.2"/><circle cx="124" cy="180" r="5" fill="#181825" stroke="#cdd6f4" stroke-opacity="0.4" stroke-width="1.2"/><circle cx="186" cy="96" r="5" fill="#181825" stroke="#cdd6f4" stroke-opacity="0.4" stroke-width="1.2"/><circle cx="186" cy="130" r="5" fill="#89b4fa" stroke="#cdd6f4" stroke-opacity="0" stroke-width="1.2"/><circle cx="186" cy="164" r="5" fill="#89b4fa" stroke="#cdd6f4" stroke-opacity="0" stroke-width="1.2"/><circle cx="236" cy="112" r="5" fill="#89b4fa" stroke="#cdd6f4" stroke-opacity="0" stroke-width="1.2"/><circle cx="236" cy="148" r="5" fill="#89b4fa" stroke="#cdd6f4" stroke-opacity="0" stroke-width="1.2"/>
+  <rect x="262" y="62" width="126" height="134" rx="10" fill="#1e1e2e" stroke="#cdd6f4" stroke-opacity=".18"/>
+  <text x="274" y="84" font-size="8" letter-spacing="1.4" fill="#6c7086">NEXT TOKEN</text>
+  <text x="274" y="112" font-size="9.5" fill="#cdd6f4">researching</text><text x="380" y="112" text-anchor="end" font-size="9" fill="#89b4fa">0.48</text><rect x="274" y="117" width="106" height="4" rx="2" fill="#cdd6f4" fill-opacity=".08"/><rect x="274" y="117" width="50.9" height="4" rx="2" fill="#89b4fa"/><text x="274" y="142" font-size="9.5" fill="#cdd6f4">gaming</text><text x="380" y="142" text-anchor="end" font-size="9" fill="#fab387">0.47</text><rect x="274" y="147" width="106" height="4" rx="2" fill="#cdd6f4" fill-opacity=".08"/><rect x="274" y="147" width="49.8" height="4" rx="2" fill="#fab387"/><text x="274" y="172" font-size="9.5" fill="#cdd6f4">asleep</text><text x="380" y="172" text-anchor="end" font-size="9" fill="#6c7086">0.05</text><rect x="274" y="177" width="106" height="4" rx="2" fill="#cdd6f4" fill-opacity=".08"/><rect x="274" y="177" width="5.3" height="4" rx="2" fill="#6c7086"/>
+</svg>

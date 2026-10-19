@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 250" width="800" height="500">
+  <title>Two colossal titans locked in a sword clash above an endless sea</title>
+  <style>
+    .tw{animation:tw 3.2s ease-in-out infinite}
+    .tw:nth-child(3n){animation-delay:-1.1s}
+    .tw:nth-child(4n){animation-delay:-2.3s;animation-duration:4.4s}
+    @keyframes tw{0%,100%{opacity:.7}50%{opacity:.25}}
+    .clash{animation:clash 2.4s ease-in-out infinite;transform-origin:193px 32px}
+    @keyframes clash{0%,100%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.18)}}
+    @media (prefers-reduced-motion:reduce){.tw,.clash{animation:none}}
+  </style>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#070a18"/>
+      <stop offset=".45" stop-color="#18233f"/>
+      <stop offset=".74" stop-color="#433e66"/>
+      <stop offset=".92" stop-color="#b9807a"/>
+      <stop offset="1" stop-color="#e9b79a"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3b3468"/>
+      <stop offset=".2" stop-color="#1d2350"/>
+      <stop offset="1" stop-color="#060818"/>
+    </linearGradient>
+    <linearGradient id="tL" gradientUnits="userSpaceOnUse" x1="0" y1="24" x2="0" y2="192">
+      <stop offset="0" stop-color="#0c1331"/>
+      <stop offset=".7" stop-color="#1d2552"/>
+      <stop offset="1" stop-color="#584a7c"/>
+    </linearGradient>
+    <linearGradient id="tR" gradientUnits="userSpaceOnUse" x1="0" y1="24" x2="0" y2="192">
+      <stop offset="0" stop-color="#0f1328"/>
+      <stop offset=".7" stop-color="#22264a"/>
+      <stop offset="1" stop-color="#5a4876"/>
+    </linearGradient>
+    <linearGradient id="monado" gradientUnits="userSpaceOnUse" x1="170" y1="46" x2="246" y2="2">
+      <stop offset="0" stop-color="#ff3b52"/>
+      <stop offset="1" stop-color="#ffd6dc"/>
+    </linearGradient>
+    <linearGradient id="steel" gradientUnits="userSpaceOnUse" x1="214" y1="46" x2="150" y2="4">
+      <stop offset="0" stop-color="#7f93bd"/>
+      <stop offset="1" stop-color="#e3ecff"/>
+    </linearGradient>
+    <radialGradient id="sun" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ffd7a8" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#ffd7a8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spark" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".3" stop-color="#ffd1da" stop-opacity=".9"/>
+      <stop offset=".6" stop-color="#ff5d75" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#ff5d75" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fog" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffc3a6" stop-opacity="0"/>
+      <stop offset=".6" stop-color="#ffc3a6" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#ffc3a6" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter>
+    <clipPath id="seaClip"><rect x="0" y="188" width="400" height="62"/></clipPath>
+  </defs>
+
+  <rect width="400" height="190" fill="url(#sky)"/>
+  <g fill="#fff">
+    <circle class="tw" cx="22" cy="18" r="1"/><circle class="tw" cx="48" cy="52" r=".8"/><circle class="tw" cx="70" cy="12" r="1.2"/>
+    <circle class="tw" cx="96" cy="70" r=".7"/><circle class="tw" cx="132" cy="22" r=".9"/><circle class="tw" cx="146" cy="88" r=".6"/>
+    <circle class="tw" cx="30" cy="96" r=".7"/><circle class="tw" cx="260" cy="14" r="1"/><circle class="tw" cx="292" cy="96" r=".7"/>
+    <circle class="tw" cx="318" cy="22" r="1.3"/><circle class="tw" cx="342" cy="62" r=".8"/><circle class="tw" cx="372" cy="16" r="1"/>
+    <circle class="tw" cx="388" cy="84" r=".7"/><circle class="tw" cx="356" cy="112" r=".6"/><circle class="tw" cx="12" cy="66" r=".9"/>
+    <circle class="tw" cx="62" cy="128" r=".6"/><circle class="tw" cx="330" cy="128" r=".6"/><circle class="tw" cx="216" cy="84" r=".7"/>
+  </g>
+  <ellipse cx="200" cy="188" rx="190" ry="34" fill="url(#sun)"/>
+
+  <g id="giants">
+    <!-- left titan: organic -->
+    <g fill="url(#tL)" stroke="url(#tL)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M98 64 Q74 38 66 58 Q80 62 96 78 Z" stroke-width="1"/>
+      <path d="M112 114 L100 150 L90 192" fill="none" stroke-width="13"/>
+      <path d="M130 114 L142 152 L156 192" fill="none" stroke-width="13"/>
+      <path d="M100 66 Q121 58 143 66 L136 100 Q131 118 121 120 Q110 118 106 100 Z" stroke-width="2"/>
+      <ellipse cx="121" cy="116" rx="17" ry="9"/>
+      <path d="M102 70 L90 98 L84 124" fill="none" stroke-width="9"/>
+      <path d="M140 70 L156 60 L170 46" fill="none" stroke-width="9"/>
+      <circle cx="170" cy="46" r="5.5"/>
+      <ellipse cx="101" cy="70" rx="9" ry="7"/>
+      <ellipse cx="141" cy="69" rx="9" ry="7"/>
+      <circle cx="121" cy="52" r="9"/>
+      <path d="M115 46 L101 29 L119 41 Z" stroke-width="1"/>
+      <path d="M126 45 L135 27 L129 46 Z" stroke-width="1"/>
+    </g>
+    <!-- right titan: mechanical -->
+    <g fill="url(#tR)" stroke="url(#tR)" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M290 62 L320 38 L302 68 Z" stroke-width="1"/>
+      <path d="M290 72 L326 60 L300 80 Z" stroke-width="1"/>
+      <path d="M256 116 L246 148 L240 192" fill="none" stroke-width="12"/>
+      <path d="M276 116 L290 150 L298 192" fill="none" stroke-width="12"/>
+      <path d="M239 141 L253 139 L251 157 L240 155 Z" stroke-width="1"/>
+      <path d="M284 143 L298 146 L297 161 L285 158 Z" stroke-width="1"/>
+      <path d="M244 64 L292 62 L286 92 L280 118 L254 118 L250 92 Z" stroke-width="1"/>
+      <path d="M288 56 L309 62 L304 81 L285 76 Z" stroke-width="1"/>
+      <path d="M249 58 L229 62 L234 79 L251 74 Z" stroke-width="1"/>
+      <path d="M298 76 L308 100 L302 128" fill="none" stroke-width="8"/>
+      <path d="M244 68 L228 58 L214 46" fill="none" stroke-width="8"/>
+      <rect x="208" y="41" width="10" height="10"/>
+      <path d="M258 40 L274 38 L278 52 L266 58 L256 52 Z" stroke-width="1"/>
+      <path d="M261 41 L255 24" fill="none" stroke-width="2"/>
+      <path d="M273 39 L282 25" fill="none" stroke-width="2"/>
+    </g>
+    <circle cx="267" cy="48" r="4" fill="#ff4d62" opacity=".5" filter="url(#blur)"/>
+    <circle cx="267" cy="48" r="1.6" fill="#ff7a88"/>
+    <circle cx="267" cy="84" r="5" fill="#ff4d62" opacity=".45" filter="url(#blur)"/>
+    <circle cx="267" cy="84" r="2.2" fill="#ff6b7b"/>
+    <!-- blades -->
+    <path d="M170 46 L246 2" stroke="#ff4d62" stroke-width="6" opacity=".22" filter="url(#blur)"/>
+    <path d="M214 46 L150 4" stroke="#8fd8ff" stroke-width="7" opacity=".35" filter="url(#blur)"/>
+    <path d="M214 46 L150 4" stroke="url(#steel)" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M170 46 L246 2" stroke="url(#monado)" stroke-width="4.5" stroke-linecap="round"/>
+  </g>
+  <circle class="clash" cx="193" cy="32" r="18" fill="url(#spark)" opacity=".8"/>
+
+  <rect y="188" width="400" height="62" fill="url(#sea)"/>
+  <use xlink:href="#giants" href="#giants" transform="matrix(1 0 0 -1 0 378)" opacity=".16" clip-path="url(#seaClip)"/>
+  <g stroke="#ffd2b0" stroke-linecap="round">
+    <path d="M150 192 h40 M214 194 h22 M168 198 h56 M122 204 h30 M240 202 h44 M190 208 h24 M92 214 h26 M260 214 h30 M310 196 h28 M56 198 h30" stroke-width=".8" opacity=".35"/>
+    <path d="M140 222 h30 M200 226 h40 M300 230 h22 M70 232 h26" stroke-width=".7" opacity=".18"/>
+  </g>
+  <rect y="150" width="400" height="50" fill="url(#fog)"/>
+
+  <!-- the party, for scale -->
+  <path d="M0 250 L0 212 Q24 203 48 204 L76 202 Q96 206 108 218 L124 250 Z" fill="#04050e"/>
+  <g fill="#04050e">
+    <circle cx="49" cy="193" r="2.4"/><path d="M46.4 195.5 h5.2 l1 8 h-7.2 z"/>
+    <circle cx="58.5" cy="191.4" r="2.5"/><path d="M55.8 194 h5.4 l1 9 h-7.4 z"/>
+    <circle cx="67.5" cy="195.6" r="2"/><path d="M65.3 197.6 h4.4 l.8 5.8 h-6 z"/>
+  </g>
+  <path d="M61 197 L67 187.5" stroke="#ff4d62" stroke-width="3" opacity=".6" filter="url(#blur)"/>
+  <path d="M61 197 L67 187.5" stroke="#ff8a98" stroke-width="1.3" stroke-linecap="round"/>
+</svg>
