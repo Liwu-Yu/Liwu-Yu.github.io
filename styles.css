@@ -143,7 +143,7 @@ img { display: block; max-width: 100%; height: auto; }
 /* ---------- Sections ---------- */
 .section { padding: 72px 0 40px; }
 .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 32px; }
-.section-head h2, .about h2, .contact h2 { font-size: clamp(26px, 3vw, 32px); line-height: 1.15; font-weight: 600; letter-spacing: -.015em; }
+.section-head h2, .contact h2 { font-size: clamp(26px, 3vw, 32px); line-height: 1.15; font-weight: 600; letter-spacing: -.015em; }
 
 /* ---------- Research switcher ---------- */
 .switcher { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 40px; align-items: start; }
@@ -210,10 +210,13 @@ img { display: block; max-width: 100%; height: auto; }
 .card h3 + p { margin-top: 4px; font-size: 15px; color: var(--muted); }
 .card-credit { margin-top: 6px; font-size: 13px; color: var(--dim); }
 
-/* ---------- About ---------- */
-.about { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 72px; align-items: start; }
-.about-lead { margin-top: 18px; font-size: 19px; line-height: 1.5; }
-.portrait { width: 280px; margin-top: 28px; border-radius: 6px; }
+/* ---------- Contact (with the short profile facts) ---------- */
+.contact { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 72px; align-items: start; }
+.contact h2 + p { margin-top: 18px; color: var(--muted); }
+.email-box { margin-top: 6px; font-size: 18px; color: var(--text); }
+.email-sep { color: var(--dim); }
+.contact .link-row { margin-top: 16px; }
+.portrait { width: 280px; margin-top: 32px; border-radius: 6px; }
 .facts { border-top: 1px solid var(--line); }
 .facts > div { padding: 16px 0; border-bottom: 1px solid var(--line); }
 .facts dd { display: flex; flex-direction: column; font-size: 15px; }
@@ -223,21 +226,6 @@ img { display: block; max-width: 100%; height: auto; }
 .courses { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 4px; }
 .courses li { display: grid; grid-template-columns: 60px 1fr; gap: 10px; color: var(--muted); }
 .facts dd .courses span { color: var(--text); font-variant-numeric: tabular-nums; }
-
-/* ---------- Contact ---------- */
-.contact {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 32px;
-  align-items: end;
-  padding-top: 40px;
-  border-top: 1px solid var(--line);
-}
-.contact h2 + p { margin-top: 8px; color: var(--muted); }
-.contact-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
-.contact-actions .link-row { margin-top: 0; }
-.email-box { font-size: 18px; color: var(--text); }
-.email-sep { color: var(--dim); }
 
 /* ---------- Footer ---------- */
 .footer { display: flex; justify-content: space-between; gap: 16px; padding: 28px 0 44px; margin-top: 56px; border-top: 1px solid var(--line); font-size: 14px; color: var(--dim); }
@@ -298,9 +286,7 @@ img { display: block; max-width: 100%; height: auto; }
   .switcher-list::-webkit-scrollbar { display: none; }
   .switch-tab { flex: none; padding: 8px 0; border-bottom: 1px solid transparent; font-size: 15px; }
   .switch-tab[aria-selected="true"] { font-weight: 400; border-bottom-color: currentColor; }
-  .about { grid-template-columns: 1fr; gap: 36px; }
-  .contact { grid-template-columns: 1fr; align-items: start; }
-  .contact-actions { align-items: flex-start; }
+  .contact { grid-template-columns: 1fr; gap: 36px; }
 }
 
 @media (max-width: 720px) {
