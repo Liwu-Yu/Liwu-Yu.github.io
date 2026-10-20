@@ -50,7 +50,9 @@ themePicker.addEventListener('keydown', event => {
   }
 });
 themePicker.addEventListener('focusout', event => {
-  if (!themePicker.contains(event.relatedTarget)) closeThemeOptions();
+  // Safari can blur a button without focusing the clicked option. Keep that
+  // option visible until its click runs; outside clicks are handled below.
+  if (event.relatedTarget && !themePicker.contains(event.relatedTarget)) closeThemeOptions();
 });
 document.addEventListener('click', event => {
   if (!themePicker.contains(event.target)) closeThemeOptions();
