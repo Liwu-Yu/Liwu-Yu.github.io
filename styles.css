@@ -100,9 +100,23 @@ img { display: block; max-width: 100%; height: auto; }
 .topbar { position: sticky; top: 0; z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); }
 .topbar-inner { display: flex; align-items: center; gap: 28px; height: 60px; }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; margin-right: auto; }
-.sprite { width: 20px; height: 24px; image-rendering: pixelated; flex: none; }
-.sprite .eye { animation: blink 5s infinite; transform-box: fill-box; transform-origin: center; }
-@keyframes blink { 0%, 95%, 100% { transform: scaleY(1); } 97% { transform: scaleY(.1); } }
+.mascot {
+  width: 48px;
+  height: 52px;
+  flex: none;
+  background: url('assets/mochi-spritesheet.webp') 0 0 / 384px 572px no-repeat;
+  animation: mochi-blink 5s steps(1, end) infinite;
+}
+/* The original sheet uses 192 x 208 cells; its first six frames form the idle loop. */
+@keyframes mochi-blink {
+  0%, 80%, 100% { background-position: 0 0; }
+  82% { background-position: -48px 0; }
+  84% { background-position: -96px 0; }
+  86% { background-position: -144px 0; }
+  88% { background-position: -192px 0; }
+  90% { background-position: -240px 0; }
+  92% { background-position: 0 0; }
+}
 .nav { display: flex; gap: 24px; }
 .nav a { position: relative; padding: 6px 0; font-size: 15px; color: var(--muted); transition: color .15s; }
 .nav a:hover, .nav a[aria-current="true"] { color: var(--text); }
@@ -326,5 +340,6 @@ img { display: block; max-width: 100%; height: auto; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .mascot { animation: none; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
