@@ -5,16 +5,55 @@ const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- Theme ---------- */
+const themePicker = $('.theme-picker');
 const themeBtn = $('.theme-btn');
-function setTheme(theme, persist) {
+const themeOptions = $('#theme-options');
+const themeChoices = $$('[data-theme-choice]', themeOptions);
+const systemTheme = matchMedia('(prefers-color-scheme: dark)');
+let themeMode = document.documentElement.dataset.themeMode || 'system';
+function setThemeMode(mode, persist = false) {
+  themeMode = ['system', 'light', 'dark'].includes(mode) ? mode : 'system';
+  const theme = themeMode === 'system' ? (systemTheme.matches ? 'dark' : 'light') : themeMode;
+  document.documentElement.dataset.themeMode = themeMode;
   document.documentElement.dataset.theme = theme;
   $('meta[name="theme-color"]').content = theme === 'dark' ? '#1e1e2e' : '#eff1f5';
-  themeBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-  if (persist) try { localStorage.setItem('liwu-theme-v2', theme); } catch {}
+  const label = themeMode === 'system' ? `System (${theme})` : themeMode === 'dark' ? 'Dark' : 'Light';
+  themeBtn.setAttribute('aria-label', `Color theme: ${label}`);
+  themeBtn.title = `Color theme: ${label}`;
+  themeChoices.forEach(choice => choice.setAttribute('aria-pressed', String(choice.dataset.themeChoice === themeMode)));
+  if (persist) try { localStorage.setItem('liwu-theme-v2', themeMode); } catch {}
 }
-setTheme(document.documentElement.dataset.theme || 'light');
+function closeThemeOptions() {
+  themeOptions.hidden = true;
+  themeBtn.setAttribute('aria-expanded', 'false');
+}
+setThemeMode(themeMode);
+systemTheme.addEventListener('change', () => {
+  if (themeMode === 'system') setThemeMode('system');
+});
 themeBtn.addEventListener('click', () => {
-  setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark', true);
+  const open = themeOptions.hidden;
+  themeOptions.hidden = !open;
+  themeBtn.setAttribute('aria-expanded', String(open));
+  if (open) themeChoices.find(choice => choice.dataset.themeChoice === themeMode).focus();
+});
+themeChoices.forEach(choice => choice.addEventListener('click', () => {
+  setThemeMode(choice.dataset.themeChoice, true);
+  closeThemeOptions();
+  themeBtn.focus();
+}));
+themePicker.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && !themeOptions.hidden) {
+    event.preventDefault();
+    closeThemeOptions();
+    themeBtn.focus();
+  }
+});
+themePicker.addEventListener('focusout', event => {
+  if (!themePicker.contains(event.relatedTarget)) closeThemeOptions();
+});
+document.addEventListener('click', event => {
+  if (!themePicker.contains(event.target)) closeThemeOptions();
 });
 
 /* ---------- Toast ---------- */
